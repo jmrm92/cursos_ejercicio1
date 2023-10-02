@@ -10,4 +10,5 @@ public interface CursosService{
     void altaCurso(Curso curso);
     void actualizarCurso(Curso curso);
     List<Curso> eliminarCurso(int codCurso);
+    List<Curso> filtrarPorPrecio(double precio1, double precio2);
 }

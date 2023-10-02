@@ -38,5 +38,10 @@ public class CursosServiceImpl implements CursosService {
         dao.deleteById(codCurso);
         return dao.findAll();
     }
+
+    @Override
+    public List<Curso> filtrarPorPrecio(double precio1, double precio2) {
+        
+    }
     
 }

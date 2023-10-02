@@ -40,9 +40,14 @@ public class CursosController {
         return service.eliminarCurso(codCurso);
     }
 
-    @PutMapping (value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping (value = "/{codCurso}/{duracion}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void actualizarCurso (@RequestBody Curso curso) {
         service.actualizarCurso(curso);
     }  
+
+    @GetMapping (value = "/{precio}/{precio}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Curso> filtrarPorPrecio (double precio) {
+        return service.filtrarPorPrecio(precio);
+    }
 
 }
