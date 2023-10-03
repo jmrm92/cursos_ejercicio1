@@ -5,10 +5,10 @@ import java.util.List;
 import com.master.cursos.model.Curso;
 
 public interface CursosService{
-    List<Curso> cursos();
+    
     Curso buscarCurso (int codCurso);
-    void altaCurso(Curso curso);
+    List<Curso> altaCurso(Curso curso);
     void actualizarCurso(Curso curso);
     List<Curso> eliminarCurso(int codCurso);
-    List<Curso> filtrarPorPrecio(double precio1, double precio2);
+    List<Curso> cursoRangoPrecio(double precioMinimo, double precioMaximo);
 }

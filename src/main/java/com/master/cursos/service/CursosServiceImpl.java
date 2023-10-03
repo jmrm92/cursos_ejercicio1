@@ -13,19 +13,16 @@ public class CursosServiceImpl implements CursosService {
     
     @Autowired
     private CursosDao dao;
-    @Override
-    public List<Curso> cursos() {
-        return dao.findAll();
-    }
-
+ 
     @Override
     public Curso buscarCurso(int codCurso) {
         return dao.findById(codCurso).orElse(null);
     }
 
     @Override
-    public void altaCurso(Curso curso) {
+    public List<Curso> altaCurso(Curso curso) {
         dao.save(curso);
+        return dao.findAll();
     }
 
     @Override
@@ -40,8 +37,9 @@ public class CursosServiceImpl implements CursosService {
     }
 
     @Override
-    public List<Curso> filtrarPorPrecio(double precio1, double precio2) {
-        
+    public List<Curso> cursoRangoPrecio(double precioMinimo, double precioMaximo) {
+        return dao.filtrarPorPrecio(precioMinimo, precioMaximo);
     }
+
     
 }
