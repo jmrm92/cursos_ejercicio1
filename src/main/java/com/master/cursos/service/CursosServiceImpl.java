@@ -41,5 +41,10 @@ public class CursosServiceImpl implements CursosService {
         return dao.filtrarPorPrecio(precioMinimo, precioMaximo);
     }
 
+    @Override
+    public List<Curso> cursos() {
+        return dao.findAll();
+    }
+
     
 }

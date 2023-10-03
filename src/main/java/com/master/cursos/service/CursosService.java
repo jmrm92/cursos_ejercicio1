@@ -5,7 +5,7 @@ import java.util.List;
 import com.master.cursos.model.Curso;
 
 public interface CursosService{
-    
+    List<Curso> cursos();
     Curso buscarCurso (int codCurso);
     List<Curso> altaCurso(Curso curso);
     void actualizarCurso(Curso curso);

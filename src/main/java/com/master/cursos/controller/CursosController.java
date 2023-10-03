@@ -21,6 +21,11 @@ public class CursosController {
     @Autowired
     CursosService service;
 
+    @GetMapping (value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Curso> cursos () {
+        return service.cursos();
+    }
+
     @GetMapping (value = "/{codCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Curso buscarCurso (@PathVariable ("codCurso") int codCurso) {
         return service.buscarCurso(codCurso);
