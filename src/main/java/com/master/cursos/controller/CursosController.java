@@ -37,7 +37,7 @@ public class CursosController {
     }
 
     @PutMapping (value = "/{codCurso}/{duracion}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void actualizarCurso (@PathVariable int codCurso, @PathVariable int duracion) {
+    public void actualizarCurso (@PathVariable ("codCurso") int codCurso, @PathVariable ("duracion") int duracion) {
         Curso curso = service.buscarCurso(codCurso);
         curso.setDuracion(duracion);
         service.actualizarCurso(curso);
