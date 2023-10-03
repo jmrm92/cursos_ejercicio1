@@ -22,7 +22,7 @@ public class CursosController {
     CursosService service;
 
     @GetMapping (value = "/{codCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Curso buscarCurso (int codCurso) {
+    public Curso buscarCurso (@PathVariable ("codCurso") int codCurso) {
         return service.buscarCurso(codCurso);
     }
     
@@ -44,7 +44,7 @@ public class CursosController {
     }  
 
     @GetMapping (value = "/{precioMinimo}/{precioMaximo}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Curso> filtrarPorPrecio (@PathVariable double precioMinimo,@PathVariable double precioMaximo) {
+    public List<Curso> filtrarPorPrecio (@PathVariable ("precioMinimo") double precioMinimo,@PathVariable ("precioMaximo") double precioMaximo) {
         return service.cursoRangoPrecio (precioMinimo, precioMaximo);
     }
 
