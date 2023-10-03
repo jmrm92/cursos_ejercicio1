@@ -32,7 +32,7 @@ public class CursosController {
     }
 
     @DeleteMapping (value = "/{codCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Curso> eliminarCurso (int codCurso) {
+    public List<Curso> eliminarCurso (@PathVariable ("codCurso") int codCurso) {
         return service.eliminarCurso(codCurso);
     }
 
