@@ -43,7 +43,7 @@ public class CursosController {
         service.actualizarCurso(curso);
     }  
 
-    @GetMapping (value = "/{precio}/{precio}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping (value = "/{precioMinimo}/{precioMaximo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Curso> filtrarPorPrecio (@PathVariable double precioMinimo,@PathVariable double precioMaximo) {
         return service.cursoRangoPrecio (precioMinimo, precioMaximo);
     }
